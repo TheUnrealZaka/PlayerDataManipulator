@@ -43,3 +43,10 @@ jobs:
         files: player-data-manipulator/PlayerDataManipulator-v*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        files: player-data-manipulator/PlayerDataManipulator-v*.jar
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
